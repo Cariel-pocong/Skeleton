@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <title>Independence Day Celebration</title>
+  <style>
+   
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      height: 300px;
+    }
+    
+    .carousel-item {
+      flex: 0 0 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    
+    .content {
+      margin-top: 20px;
+    }
+    
+    .preview {
+      overflow: hidden;
+      height: 100px;
+    }
+    
+    .show-more {
+      color: blue;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Independence Day Celebration</h1>
+  
+  <div class="carousel">
+    <div class="carousel-item">
+      <img src="" alt="Image 1">
+    </div>
+    <div class="carousel-item">
+      <img src="image2.jpg" alt="Image 2">
+    </div>
+    <div class="carousel-item">
+      <img src="image3.jpg" alt="Image 3">
+    </div>
+    <!-- Add more carousel items for additional images -->
+  </div>
+  
+  <div class="content">
+    <h2>Historical significance of June 12 to us Filipinos:</h2>
+    <p class="preview">June 12 holds immense historical significance for Filipinos as it marks the declaration of Philippine independence from Spanish colonial rule...</p>
+    <p class="full-content" style="display: none;">June 12 holds immense historical significance for Filipinos as it marks the declaration of Philippine independence from Spanish colonial rule. On this day in 1898, General Emilio Aguinaldo proclaimed the country's sovereignty in Kawit, Cavite, officially starting the Philippine Revolution against Spain. June 12 is celebrated annually as Independence Day, commemorating the Filipino people's struggle for freedom and self-determination.</p>
+    <p class="show-more" onclick="toggleContent(0)">View more</p>
+  </div>
+  
+  <div class="content">
+    <h2>Notable actions by Cebuanos during that era:</h2>
+    <p class="preview">Cebuanos played a crucial role in the fight for independence during that era...</p>
+    <p class="full-content" style="display: none;">Cebuanos played a crucial role in the fight for independence during that era. One notable event was the Battle of Tres de Abril in 1898, where Cebuano revolutionaries led by Leon Kilat successfully expelled Spanish forces from the province. This victory significantly contributed to the overall success of the revolution and demonstrated the Cebuanos' commitment to the cause of freedom.</p>
+    <p class="show-more" onclick="toggleContent(1)">View more</p>
+  </div>
+  <div class="content">
+    <h2> Activities during the Independence Day celebration:</h2>
+    <p class="preview">Independence Day is a nationwide celebration filled with various activities and festivities. In Luzon,...</p>
+    <p class="full-content" style="display: none;">Independence Day is a nationwide celebration filled with various activities and festivities. In Luzon, grand parades are held, showcasing the rich cultural heritage of the region. People dress in traditional attire, and historical reenactments take place, depicting significant moments in Philippine history. In Visayas, there are street parties, concerts, and fireworks displays that bring communities together in celebration. In Mindanao, cultural festivals highlight the diverse ethnic groups in the region, promoting unity and cultural preservation.</p>
+    <p class="show-more" onclick="toggleContent(2)"> View more</p>
+    </div>
+    <div class="content">
+    <h2>Activities in my hometown: </h2>
+    <p class="preview">In my hometown, we organize a flag-raising ceremony early in the morning to kick off the Independence Day celebration...</p>
+    <p class="full-content" style="display: none;">In my hometown, we organize a flag-raising ceremony early in the morning to kick off the Independence Day celebration. This is followed by a community parade where local schools, organizations, and government officials participate. In the afternoon, we have a program showcasing traditional dances, music performances, and speeches that highlight the significance of independence. The day concludes with a vibrant fireworks display that illuminates the night sky, symbolizing the spirit of freedom.</p>
+    <p class="show-more" onclick="toggleContent(2)"> View more</p>
+    </div>
+    <div class="content">
+    <h2>Thoughts about the celebration: </h2>
+    <p class="preview">The Independence Day celebration fills me with pride and gratitude for the sacrifices made by our forefathers to secure our freedom...</p>
+    <p class="full-content" style="display: none;">The Independence Day celebration fills me with pride and gratitude for the sacrifices made by our forefathers to secure our freedom. It serves as a reminder of the importance of unity, resilience, and love for our country. The festivities bring people from all walks of life together, fostering a sense of national identity and shared history. It is a time to reflect on the progress we have made as a nation and the challenges that lie ahead. Independence Day reminds us to cherish our hard-fought freedom and to continue working towards a brighter future for generations to come.</p>
+    <p class="show-more" onclick="toggleContent(2)"> View more</p>
+    </div>
+  
+  <script>
+    // JavaScript for toggling full content
+    function toggleContent(index) {
+      const fullContent = document.querySelectorAll('.full-content')[index];
+      const preview = document.querySelectorAll('.preview')[index];
+      const showMoreBtn = document.querySelectorAll('.show-more')[index];
+      
+      if (fullContent.style.display === 'none') {
+        fullContent.style.display = 'block';
+        preview.style.display = 'none';
+        showMoreBtn.textContent = 'View less';
+      } else{ fullContent.style.display = 'none'; preview.style.display = 'block'; showMoreBtn.textContent = 'View more'; } } 
+     
+    // JavaScript for the carousel
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
+  
+    function showSlide(index) {
+      carouselItems.forEach((item, i) => {
+        if (i === index) {
+          item.style.transform = 'translateX(0)';
+        } else {
+          item.style.transform = 'translateX(-100%)';
+        }
+      });
+    }
+  
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % carouselItems.length;
+      showSlide(currentIndex);
+    }
+  
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+  
+    </script>
+</body>
+</html>
